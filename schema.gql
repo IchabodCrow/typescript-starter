@@ -1,0 +1,36 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ErrorData {
+  message: String!
+  attributeName: String
+}
+
+type AuthResponseUser {
+  id: String!
+  email: String!
+}
+
+type AuthResponseData {
+  token: String
+  user: AuthResponseUser!
+}
+
+type AuthResponse {
+  data: AuthResponseData
+  errors: [ErrorData!]!
+}
+
+type Query {
+  sayHello: String!
+}
+
+type Mutation {
+  signIn(userData: SignInRequest!): AuthResponse!
+}
+
+input SignInRequest {
+  email: String!
+  password: String!
+}
